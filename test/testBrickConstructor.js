@@ -1,3 +1,4 @@
+const { AssertionError } = require('assert');
 var assert = require('assert');
 var lego = require('../legos');
 const Brick = lego.Brick;
@@ -9,11 +10,15 @@ describe('Brick', function() {
         
       });
     });
-    describe('#Notinstanceof()', function() {
-        it('should not create brick object ', function() {
-            var brick = new Brick("Red", 1);
-            assert.equal(brick.size , 1 , " No Brick object");
-          
-        });
-      });
+    it("Cannot create brick with Red as Size and 1 as color", function (done) {
+        
+            try {
+                var brick = new Brick("Red", 1);
+                done();
+            }
+            catch (e) {
+                done(e);
+            }
+      
+    });
   });
