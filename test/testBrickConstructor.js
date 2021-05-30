@@ -10,8 +10,8 @@ describe('Brick', function() {
         
       });
     });
-    it("fails with assertion error", function (done) {
-        setTimeout(function () {
+    it("Cannot create brick with Red as Size and 1 as color", function (done) {
+        
             try {
                 var brick = new Brick("Red", 1);
                 done();
@@ -19,6 +19,6 @@ describe('Brick', function() {
             catch (e) {
                 done(e);
             }
-        }, 1000);
+      
     });
   });
