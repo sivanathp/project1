@@ -95,4 +95,49 @@ describe('LegoPile', function() {
 
       });
     });
+
+    describe('test to get count of all bricks in LegoPile', function() {
+      it('find total bricks in lego pile', function() {
+          var brick1 = new Brick(1, "red");
+          var brick2 = new Brick(2, "red");
+          var brick3 = new Brick(3, "red");
+          var brick4 = new Brick(4, "red");
+          var brick5 = new Brick(5, "red");
+          var brick6 = new Brick(6, "red");
+
+          var pile = new LegoPile();
+          pile.insert(brick1);
+          pile.insert(brick2);
+          pile.insert(brick3);
+          pile.insert(brick4);
+          pile.insert(brick5);
+          pile.insert(brick6);
+          
+          assert.equal(pile.count, 6);
+          
+
+      });
+    });
+
+    describe('test to get count of all bricks with different colors in LegoPile', function() {
+      it('find total bricks of all colors in lego pile', function() {
+          var brick0 = new Brick(1, "red");
+          var brickgreen = new Brick(2, "green");
+          var brickblue = new Brick(3, "blue");
+          var brickyellow = new Brick(4, "yellow");
+          var brickblack = new Brick(5, "black");
+          var brickwhite = new Brick(6, "white");
+
+          var pile = new LegoPile();
+          pile.insert(brick0);
+          pile.insert(brickgreen);
+          pile.insert(brickblue);
+          pile.insert(brickyellow);
+          pile.insert(brickblack);
+          pile.insert(brickwhite);
+          assert.equal(pile.count, 6);
+        
+      });
+    });
+
   });
