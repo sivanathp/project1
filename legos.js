@@ -13,6 +13,7 @@ function LegoPile() {
     this.datastore = new Array();
     this.find = find;
     this.insert = insert;
+    this.hasBrick = hasBrick;
     this.datastore["red"] = new BST();
     this.datastore["green"] = new BST();
     this.datastore["blue"] = new BST();
@@ -26,9 +27,28 @@ function LegoPile() {
     this.datastore[brick.color].insert(brick.size);
  }
  
- 
- function find(key) {
-    return this.datastore[key];
- }
+ function hasBrick(size, color) {
+    
+    var current = this.datastore[color].root;
+    while (current.data != size) {
+       if (size < current.data) {
+          current = current.left;
+       }
+       else {
+          current = current.right;
+       }
+       if (current == null) {
+          return false;
+       }
+    }
+    
+    if (current.data != size) {
+        return false;
+    } else {
+        return true;
+    }
+
+ } 
+
  
  
