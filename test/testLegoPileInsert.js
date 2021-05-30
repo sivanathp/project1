@@ -44,4 +44,31 @@ describe('LegoPile', function() {
         
       });
     });
+
+    describe('insert several bricks of one color', function() {
+      it('A several brick of one color in lego pile', function() {
+          var brick1 = new Brick(1, "red");
+          var brick2 = new Brick(2, "red");
+          var brick3 = new Brick(3, "red");
+          var brick4 = new Brick(4, "red");
+          var brick5 = new Brick(5, "red");
+          var brick6 = new Brick(6, "red");
+
+          var pile = new LegoPile();
+          pile.insert(brick1);
+          pile.insert(brick2);
+          pile.insert(brick3);
+          pile.insert(brick4);
+          pile.insert(brick5);
+          pile.insert(brick6);
+          var bst = pile.datastore["red"]
+          assert.equal(bst.root.data, 1);
+          assert.equal(bst.root.right.data, 2);
+          assert.equal(bst.root.right.right.data, 3);
+          assert.equal(bst.root.right.right.right.data, 4);
+          assert.equal(bst.root.right.right.right.right.data, 5);
+          assert.equal(bst.root.right.right.right.right.right.data, 6);
+        
+      });
+    });
   });
