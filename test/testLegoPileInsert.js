@@ -117,8 +117,9 @@ describe('LegoPile', function() {
           pile.insert(brick4);
           pile.insert(brick5);
           pile.insert(brick6);
-          
-          assert.equal(pile.count, 6);
+          var bst = pile.datastore["red"];
+          var counts = bst.count;
+          assert.equal(counts, 6);
           
 
       });

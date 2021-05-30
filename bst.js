@@ -52,6 +52,7 @@ function Node(data, left, right) {
  function count() {
      var bricks = 0;
      countSubtree(this.root);
+    return bricks;
      
  }
  function countSubtree(node) {
