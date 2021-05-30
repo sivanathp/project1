@@ -12,8 +12,9 @@ describe('LegoPile', function() {
           var brick0 = new Brick(1, "red");
           var pile = new LegoPile();
           pile.insert(brick0);
-          
-          assert.equal(pile.datastore[red], brick0.size);
+          var bst = pile.datastore["red"]
+          assert.equal(bst.root.data, 1);
+
         
       });
     });

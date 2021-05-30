@@ -12,7 +12,6 @@ function Brick(size , color) {
 function LegoPile() {
     this.datastore = new Array();
     this.find = find;
-    this.showAll = showAll;
     this.insert = insert;
     this.datastore["red"] = new BST();
     this.datastore["green"] = new BST();
