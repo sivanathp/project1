@@ -80,6 +80,8 @@ describe('LegoPile', function() {
           var brick4 = new Brick(4, "red");
           var brick5 = new Brick(5, "red");
           var brick6 = new Brick(6, "red");
+          var brick7 = new Brick(5, "white");
+          var brick8 = new Brick(6, "yellow");
 
           var pile = new LegoPile();
           pile.insert(brick1);
@@ -88,10 +90,13 @@ describe('LegoPile', function() {
           pile.insert(brick4);
           pile.insert(brick5);
           pile.insert(brick6);
-          var bst = pile.datastore["red"]
+          pile.insert(brick7);
+          pile.insert(brick8);
           assert.equal(pile.hasBrick(3,"red"), true);
           assert.equal(pile.hasBrick(7,"red"), false);
           assert.equal(pile.hasBrick(1,"red"), true);
+          assert.equal(pile.hasBrick(5,"white"), true);
+          assert.equal(pile.hasBrick(6,"yellow"), true);
 
       });
     });
