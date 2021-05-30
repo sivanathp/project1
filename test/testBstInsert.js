@@ -9,8 +9,8 @@ describe('BST', function() {
     describe('a single node', function() {
       it('a single Node, at the root of the BST', function() {
           var brick0 = new Brick(1, "Red");
-          var nums = new BST();
-          nums.insert(brick);
+          var tree = new BST();
+          tree.insert(brick0);
           assert.equal(tree.root.data, brick0);
         
       });
