@@ -71,4 +71,28 @@ describe('LegoPile', function() {
         
       });
     });
+
+    describe('test to find a brick in LegoPile', function() {
+      it('find a particular brick in lego pile', function() {
+          var brick1 = new Brick(1, "red");
+          var brick2 = new Brick(2, "red");
+          var brick3 = new Brick(3, "red");
+          var brick4 = new Brick(4, "red");
+          var brick5 = new Brick(5, "red");
+          var brick6 = new Brick(6, "red");
+
+          var pile = new LegoPile();
+          pile.insert(brick1);
+          pile.insert(brick2);
+          pile.insert(brick3);
+          pile.insert(brick4);
+          pile.insert(brick5);
+          pile.insert(brick6);
+          var bst = pile.datastore["red"]
+          assert.equal(pile.hasBrick(3,"red"), true);
+          assert.equal(pile.hasBrick(7,"red"), false);
+          assert.equal(pile.hasBrick(1,"red"), true);
+
+      });
+    });
   });
