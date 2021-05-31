@@ -38,6 +38,7 @@ describe('BST', function() {
             tree.insert(brick1);
             assert.equal(tree.root.data, brick0);
             assert.equal(tree.root.right.data, brick1);
+            assert.equal(tree.count(), 2);
           
         });
       });

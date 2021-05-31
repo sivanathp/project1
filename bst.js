@@ -53,18 +53,16 @@ var bricks = 0;
  }
 
  function count() {
-     
+    bricks = 0;
     countSubtree(this.root);
     return bricks;
-
-     
  }
 
  function countSubtree(node) {
     if (!(node == null)) {
         countSubtree(node.left);
-        bricks = bricks + 1;
-       
        countSubtree(node.right);
+       bricks = bricks + 1;
     }
+     
  }

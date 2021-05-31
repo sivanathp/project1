@@ -54,15 +54,14 @@ function LegoPile() {
  function count() {
     var bricks = 0;
     
-    var redBricks = this.datastore["red"].count;
-    var greenBricks = this.datastore["green"].count;
-    var blueBricks = this.datastore["blue"].count;
-    var yellowBricks = this.datastore["yellow"].count;
-    var blackBricks = this.datastore["black"].count;
-    var whiteBricks = this.datastore["white"].count;
+    var redBricks = this.datastore["red"].count();
+    var greenBricks = this.datastore["green"].count();
+    var blueBricks = this.datastore["blue"].count();
+    var yellowBricks = this.datastore["yellow"].count();
+    var blackBricks = this.datastore["black"].count();
+    var whiteBricks = this.datastore["white"].count();
 
     bricks = redBricks + greenBricks + blueBricks + yellowBricks + blackBricks + whiteBricks;
-
     return bricks;
     
     

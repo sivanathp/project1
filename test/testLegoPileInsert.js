@@ -113,15 +113,14 @@ describe('LegoPile', function() {
         
          // assert.equal(bst.count, 6);
           
-          var bst = new BST();
- bst.insert(brick1.size);
- bst.insert(brick2.size);
- bst.insert(brick3.size);
- bst.insert(brick4.size);
- bst.insert(brick5.size);
- 
- var counts = bst.count();
- assert.equal(bst.count, 5);
+          var pile = new LegoPile();
+          pile.insert(brick1);
+          pile.insert(brick2);
+          pile.insert(brick3);
+          pile.insert(brick4);
+          pile.insert(brick5);
+          pile.insert(brick6);
+          assert.equal(pile.count(), 6);
 
       });
     });
@@ -142,7 +141,7 @@ describe('LegoPile', function() {
           pile.insert(brickyellow);
           pile.insert(brickblack);
           pile.insert(brickwhite);
-          assert.equal(pile.count, 6);
+          assert.equal(pile.count(), 6);
         
       });
     });
