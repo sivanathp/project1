@@ -1,24 +1,27 @@
 module.exports.Node = Node;
 module.exports.BST = BST;
 
+
 function Node(data, left, right) {
     this.data = data;
     this.left = left;
     this.right = right;
     this.show = show;
-    
+
  }
  
  function show() {
     return this.data;
  }
 
+var bricks = 0;
+
  function BST() {
     this.root = null;
     this.insert = insert;
+    this.bricks = bricks;
     this.count = count;
-    this.countSubtree = countSubtree;
-    
+    this.countSubtree = countSubtree;    
  }
  
  function insert(data) {
@@ -50,15 +53,18 @@ function Node(data, left, right) {
  }
 
  function count() {
-     var bricks = 0;
-     countSubtree(this.root);
+     
+    countSubtree(this.root);
     return bricks;
+
      
  }
+
  function countSubtree(node) {
     if (!(node == null)) {
         countSubtree(node.left);
         bricks = bricks + 1;
+       
        countSubtree(node.right);
     }
  }

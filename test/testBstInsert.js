@@ -54,6 +54,7 @@ describe('BST', function() {
             assert.equal(tree.root.data, brick0);
             assert.equal(tree.root.right.data, brick1);
             assert.equal(tree.root.left.data, brick2);
+            
           
         });
       });

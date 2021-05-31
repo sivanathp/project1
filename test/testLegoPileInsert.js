@@ -110,17 +110,18 @@ describe('LegoPile', function() {
           var brick5 = new Brick(5, "red");
           var brick6 = new Brick(6, "red");
 
-          var pile = new LegoPile();
-          pile.insert(brick1);
-          pile.insert(brick2);
-          pile.insert(brick3);
-          pile.insert(brick4);
-          pile.insert(brick5);
-          pile.insert(brick6);
-          var bst = pile.datastore["red"];
-          var counts = bst.count;
-          assert.equal(counts, 6);
+        
+         // assert.equal(bst.count, 6);
           
+          var bst = new BST();
+ bst.insert(brick1.size);
+ bst.insert(brick2.size);
+ bst.insert(brick3.size);
+ bst.insert(brick4.size);
+ bst.insert(brick5.size);
+ 
+ var counts = bst.count();
+ assert.equal(bst.count, 5);
 
       });
     });
